@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+<title>NIKE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    /* * {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;} */
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+
+    .slideshow-container {
+        max-width: 10000px;
+        position: relative;
+        margin: auto;
+    }
+
+
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+
+
+
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial;
+    }
+
+
+
+    .row {
+        display: -ms-flexbox;
+        /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap;
+        /* IE10 */
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+
+    /* Create four equal columns that sits next to each other */
+    .column {
+        -ms-flex: 25%;
+        /* IE10 */
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+    }
+
+    .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+    }
+
+
+
+    .box p {
+        text-align: center;
+    }
+
+    .box {
+        /* border: 2px solid black; */
+        margin: 6px;
+        margin-bottom: 20px;
+
+    }
+
+    .container-fluid {
+        margin: 0;
+        padding: 0;
+    }
+
+    .products {
+        padding: 16px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        .box {
+            /* background-color: red; */
+            width: 90vw;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin: auto;
+        }
+
+        .column {
+            display: grid;
+            grid-template-columns: auto;
+        }
+
+        .carousel {
+            width: 100%;
+        }
+    }
+
+    .black {
+        background-color: black;
+        height: 300px;
+        color: white;
+
+    }
+
+    .one {
+        border: 2px solid white;
+    }
+
+    .txt {
+        margin: 50px;
+        
+    }
+
+    .foot {
+        /* border: 2px solid black; */
+        height: 500px;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+        color: white;
+    }
+
+    .b {
+        width: 50%;
+        /* border: 2px solid black; */
+        margin: 4px;
+
+    }
+
+    .bleft {
+        display: flex;
+        flex-direction: column;
+        /* border: 2px solid black; */
+        padding: 14px;
+        min-width: 50%;
+    }
+
+    .blTop {
+        width: 100%;
+        height: 95%;
+        /* border: 2px solid black; */
+        display: flex;
+        flex-direction: row;
+    }
+
+    .blBottom {
+        width: 100%;
+        height: 5%;
+        /* border: 2px solid black; */
+    }
+
+    .bb {
+        width: 30%;
+        /* border: 2px solid black; */
+        height: 100%;
+        margin: auto;
+    }
+
+    .bright {
+        /* border: 2px solid black; */
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        
+
+    }
+    .brTop{
+        text-align: right;
+        height: 10%;
+
+    }
+    .brTop img{
+        height: 30px;
+        width: 30px;
+        margin: 10px;
+    }
+
+    .br {
+        /* height: 50%; */
+        /* border: 2px solid black; */
+    }
+    .brBottom {
+        display:flex;
+        height: 6%;
+    }
+    .ri{
+        margin-left: 40%;
+        
+    }
+    .brTop img{
+        border-radius: 2rem;
+    }
+    .fb{
+        
+        border: 1px solid white;
+    }
+    .brTop img:hover{
+        transform:scale(1.5);
+        transition-duration: 0.5s;
+        cursor: pointer;
+    }
+    .brMid{
+        height: 84%;
+        font-family: cursive;
+        margin: auto;
+    }
+    .brMid img{
+        width: 200px;
+    }
+    .box:hover{
+        cursor: pointer;
+        transform:scale(1.06);
+        transition-duration: 0.5s;
+    }
+
+</style>
+
+<body>
+    <div class="container-fluid"> 
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="https://cdn.britannica.com/50/213250-050-02322AA8/Nike-logo.jpg" width="1470"
+                        height="800">
+                </div>
+
+                <div class="item">
+                    <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ieONmkl8Th9k/v1/1200x-1.jpg" width="1470"
+                        height="800">
+                </div>
+
+                <div class="item">
+                    <img src="https://c.files.bbci.co.uk/44CF/production/_117751671_satan-shoes1.jpg" width="1470"
+                        height="800">
+                </div>
+
+                <div class="item">
+                    <img src="https://wwd.com/wp-content/uploads/2022/05/Nike-Shoes-1.jpg" width="1470" height="800">
+                </div>
+
+                <div class="item">
+                    <img src="https://images4.alphacoders.com/205/205916.jpg" width="1470" height="800">
+                </div>
+            </div>
+        </div>
+        <div class="products">
+            <center><img src="https://i.ebayimg.com/images/g/8cwAAOSwM0tecIeq/s-l1600.jpg" alt="" width="500"
+                    height="360">
+            </center><br>
+            <div class="row">
+                <div class="column">
+                    <a href="airJordan1.html">
+                        <div class="box" style="color: black;">
+                            <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e6da41fa-1be4-4ce5-b89c-22be4f1f02d4/air-force-1-07-shoes-WrLlWX.png"
+                                style="width:100%">
+                            <p>Nike Air jordan 256</p>
+                            <p> MRP:<s>12999</s> <b>5999</b></p>
+                        </div>
+                    </a>
+
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/68c28c49-4c26-4f81-9b4e-0e9760edcef9/air-max-alpha-trainer-5-training-shoes-x8Jzj6.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/88d188cf-b8ce-4288-a49b-2bc4d174eb3c/nikecourt-zoom-vapor-cage-4-rafa-hard-court-tennis-shoes-cS7wct.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f07c8068-3696-4127-ad95-f7d9f71b21e4/zoom-fly-5-road-running-shoes-lkx7Zp.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5bf8e7f4-18c7-4826-9bab-7b9532a5e3b6/air-jordan-1-mid-shoes-SQf7DM.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/fd0c8f03-b02d-413c-ab9f-758bd19775df/air-jordan-1-mid-se-craft-shoes-skP03z.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+
+                    <div class="box">
+
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4c0e5a3d-e70e-4a29-b470-d880239b84da/alphafly-2-road-racing-shoes-pTSZRk.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/6de4b02f-718c-46cf-a548-da944cf3e836/gripknit-phantom-gx-elite-fg-football-boot-6t4Xff.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/67a1b813-150e-4b34-ac3b-42a57b907d59/lunar-force-1-duckboot-xpzdvK.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d6b21f68-1ebb-418b-9903-9c6b44d0bbf1/air-presto-shoes-QdhgZW.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/616a8a2f-193d-437c-b336-b4df8eacf0d3/air-jordan-1-mid-se-shoes-pZbfP8.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f2f5ab29-36fb-48c7-81d9-50baa654b2b9/air-force-1-mid-07-shoes-ZzCgrn.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/8e5c2b2d-ffed-4874-a843-338faf37b8e3/dunk-high-retro-shoes-Cg1ncq.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5102948b-a21f-44e1-aceb-33618fd8e340/zoom-rival-waffle-5-athletics-distance-spikes-x2fTwc.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/ac871484-8738-44cf-abbd-4d347ad536e9/revolution-6-flyease-next-nature-easy-on-off-road-running-shoes-XvR99K.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/6dd0e386-b7fe-43b3-a994-d3258e16218e/jordan-nu-retro-1-low-shoes-8294mJ.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d3ec656f-befc-406b-a80e-08856ed76f78/jordan-max-aura-4-shoes-cKMcXJ.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/cd547289-3da5-470b-bf68-a209187b2487/infinity-g-golf-shoe-806N1f.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/3f772414-345b-410f-80dc-a368b1ce4b78/rival-fly-3-road-racing-shoes-XbhTCL.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-4a71bfe4-6a33-47ab-8c77-80fcabdce022/air-max-95-essential-shoe-nbWs2c.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/87d0f158-799a-41b8-8eac-ce030f309b26/zoom-rival-athletics-sprinting-spikes-QNwNt9.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/ed1fa4f9-93c1-4ebc-96b3-f0a757aced15/jordan-one-take-4-pf-shoes-cdsVn1.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/1698d474-02df-4123-89c5-8630cdf54b4b/air-jordan-6-retro-shoes-fjwJgW.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/851c011e-1c42-4c44-87b8-d14af5c95ff1/pegasus-39-road-running-shoes-sKxqrV.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/2013f0ed-4157-43b5-8fc0-3517e41b4fdc/venture-runner-shoe-mT8r8R.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/30e31c10-cf85-483f-ad61-a115e592ffb8/air-jordan-2-retro-shoes-KGJqKf.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/ae07b5f1-8847-4f07-957b-6bc625b9b308/sb-force-58-skate-shoes-LJNW5L.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/30b20aee-35d1-4698-87f0-fb2fa28fdf85/zoom-mercurial-dream-speed-superfly-9-academy-tf-football-shoes-gg2PwC.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/9218d532-2922-4d04-b556-58a7a1f2c2e7/air-max-95-shoes-DWVbzZ.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/4e2780d0-bd81-47d8-a352-71e269cadc7c/dunk-high-retro-se-shoes-h51LLX.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/3b5fc6f3-9d2f-4fe9-9f8a-4b746e4ded80/air-jordan-xxxvii-pf-basketball-shoes-rthNXn.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/571df40b-1b5b-41c4-a2ca-982449647284/air-jordan-7-retro-se-shoes-FP85D2.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/70b257d2-e16a-4e2c-9c64-45af16ede378/air-force-1-mid-react-shoes-9Tkx21.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e68e5312-d465-4641-bfa6-53da7b7e78b9/vaporfly-2-road-racing-shoes-D4ntS0.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f08d2d36-816b-4bfd-ae12-bc4a228bd060/pegasus-39-shield-weatherised-road-running-shoes-dcpVxH.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/716c7e6e-11a1-4b09-a456-fa7b67423034/dunk-high-retro-shoe-DdRmMZ.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/fd3789d3-71b2-467f-b6ce-cd10942615b0/air-kukini-shoes-nT8GrX.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/3bda490f-2e57-49a4-8af6-e3b5716b6b0e/air-more-uptempo-96-shoes-f5stNg.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/745d468b-7519-4829-87a7-4718c656d237/zoom-mercurial-vapor-15-elite-fg-football-boot-9Mbrnv.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+                    </div>
+                    <div class="box">
+                        <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f1be96b2-6a77-4588-b864-e2814c37a9f7/zoom-mercurial-dream-speed-vapor-15-academy-mg-multi-ground-football-boot-tcxXXD.png"
+                            style="width:100%">
+                        <p>Nike Air jordan 256</p>
+                        <p> MRP:<s>12999</s> <b>5999</b></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+      <!-- <script>  
+            let slideIndex = 0;
+            showSlides();
+    
+            function showSlides() {
+                <!-- let i;  -->
+                <!-- let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1 }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", ""); 
+                 }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                setTimeout(showSlides, 3000); // Change image every 2 seconds -->
+            } 
+    
+         <!-- </script>    --> --> -->
+
+    <footer>
+        <div class="foot">
+            <div class="b bLeft">
+                <div class="blTop">
+                    <div class="box1 bb">
+                        <b><p>FIND STORE</p>
+                        <p>BECOME MANAGER</p>
+                        <p>SIGN UP FOR MAIL</p>
+                        <p>SEND US FEEDBACK</p>
+                        <p>STUDENT DISCOUNTS</p></b>
+                    </div>
+                    <div class="box2 bb">
+                        <p><b>GET HELP</b></p>
+                        <p>Order Status</p>
+                        <p>Delivery </p>
+                        <p>Return</p>
+                        <p>Payments Options</p>
+                        <p>Contact Us</p>
+                        <p>Enquries</p>
+                    </div>
+                    <div class="box3 bb">
+                        <p><b>ABOUT NIKE</b></p>
+                        <p>News</p>
+                        <p>Careers</p>
+                        <p>Investors</p>
+                        <p>Sustanability</p>
+                    </div>
+                </div>
+                <div class="blBottom">
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" role="img" width="18px" height="15px" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M4.5 9.001a7.5 7.5 0 1115 0c0 1.205-.385 2.576-.934 3.928-.555 1.364-1.302 2.767-2.08 4.055a39.918 39.918 0 01-2.307 3.405c-.688.905-1.316 1.632-1.711 1.947a.75.75 0 01-.936 0c-.395-.315-1.023-1.042-1.711-1.947a39.916 39.916 0 01-2.306-3.405c-.78-1.288-1.526-2.691-2.08-4.056-.55-1.351-.935-2.722-.935-3.927zM12 12.25a3.25 3.25 0 100-6.5 3.25 3.25 0 000 6.5z" clip-rule="evenodd"></path></svg>
+                    2023 INDIA NIKE,Inc.All Rights Reserved
+                </div>
+            </div>
+            <div class=" bright">
+                <div class="br brTop">
+                    <img src="data:image/png;base64,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" alt="">
+
+                    <img class="fb" src="https://freepngimg.com/thumb/logo/69840-and-icons-computer-facebook-logo-white-black.png" alt="">
+
+                    <img  src="https://thumbs.dreamstime.com/b/rounded-black-white-youtube-icon-web-printing-purpose-rounded-black-outlined-youtube-logo-white-background-rounded-176111585.jpg" alt="">
+
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxcFncjSRYjJWiHjU_2ksLkcSNdh4gG9lnUA&usqp=CAU" alt="">
+   
+                </div>
+                <div class="br brMid">
+                    <img src="https://i.pinimg.com/originals/65/24/f1/6524f1b00c2ef57f1ae3da7605809b5a.jpg" alt="ankeetui">
+                    <h3>Ankeet Kumar Singh</h3>
+                </div>
+                <div class="br brBottom">
+                    <p class="ri">Guides</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p>Terms of Sale</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p>Terms of Use</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p>Nike Privacy Policy</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
